@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'
+        integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=='
+        crossorigin='anonymous' referrerpolicy='no-referrer' />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -16,8 +19,13 @@
 
     <div id="app">
         <div class="container">
+            <form @submit.prevent="addToDo()">
+                <input type="text" placeholder="Cosa devi fare?" v-model="toDo">
+                <button type="submit">Aggiungi</button>
+            </form>
             <ul>
-                <li :class="{done : toDo.isDone}" v-for="(toDo,i) in toDoList">{{toDo.text}}</li>
+                <li :class="{done : toDo.isDone}" v-for="(toDo,i) in toDoList">{{toDo.text}} <i class="fa-solid fa-x"
+                        @click="removeToDo(i)"></i></li>
             </ul>
         </div>
     </div>
