@@ -1,13 +1,43 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-.done{
+.done {
     text-decoration: line-through;
+}
+li{
+    list-style-position: inside;
+
+}
+
+
+
+li:hover, button:hover {
+    cursor: pointer;
+}
+
+.fa-x:hover {
+    color: red;
+}
+
+.fa-x{
+    margin-left: 10px;
+}
+
+.container {
+    padding: 5px;
+    border: 1px solid;
+    width: 300px;
+    margin: 10px auto;
+}
+
+form{
+    margin-bottom: 15px;
+    text-align: center;
 }

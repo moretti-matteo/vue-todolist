@@ -20,9 +20,9 @@ const app = new Vue({
     },
     methods: {
         addToDo() {
-
+            this.toDo = this.toDo.trim();
             if (this.toDo) {
-
+                console.log(this.toDo);
                 this.toDoList.push({
                     text: this.toDo,
                     isDone: false,

@@ -24,8 +24,9 @@
                 <button type="submit" @keyup.enter="addToDo()">Aggiungi</button>
             </form>
             <ul v-if="toDoList.length > 0">
-                <li :class="{done : toDo.isDone}" v-for="(toDo,i) in toDoList"><span
-                        @click="toggleToDo(i)">{{toDo.text}}</span> <i class="fa-solid fa-x" @click="removeToDo(i)"></i>
+                <li :class="{done : toDo.isDone}" v-for="(toDo,i) in toDoList">
+                    <span @click="toggleToDo(i)">{{toDo.text}}</span>
+                    <i class="fa-solid fa-x" @click="removeToDo(i)"></i>
                 </li>
             </ul>
             <div v-else>
