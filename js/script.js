@@ -21,7 +21,7 @@ const app = new Vue({
     methods: {
         addToDo() {
 
-            if (this.toDo === true) {
+            if (this.toDo) {
 
                 this.toDoList.push({
                     text: this.toDo,
@@ -29,8 +29,6 @@ const app = new Vue({
                 });
 
                 this.toDo = "";
-            }else{
-                alert("non puoi lasciare il campo vuoto");
             }
         },
         removeToDo(i) {
