@@ -20,13 +20,17 @@
     <div id="app">
         <div class="container">
             <form @submit.prevent="addToDo()">
-                <input type="text" placeholder="Cosa devi fare?" v-model="toDo">
-                <button type="submit">Aggiungi</button>
+                <input type="text" placeholder="Cosa devi fare?" v-model="toDo" required>
+                <button type="submit" @keyup.enter="addToDo()">Aggiungi</button>
             </form>
-            <ul>
-                <li :class="{done : toDo.isDone}" v-for="(toDo,i) in toDoList">{{toDo.text}} <i class="fa-solid fa-x"
-                        @click="removeToDo(i)"></i></li>
+            <ul v-if="toDoList.length > 0">
+                <li :class="{done : toDo.isDone}" v-for="(toDo,i) in toDoList"><span
+                        @click="toggleToDo(i)">{{toDo.text}}</span> <i class="fa-solid fa-x" @click="removeToDo(i)"></i>
+                </li>
             </ul>
+            <div v-else>
+                <h3>La lista è vuota</h3>
+            </div>
         </div>
     </div>
 

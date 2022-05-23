@@ -20,14 +20,25 @@ const app = new Vue({
     },
     methods: {
         addToDo() {
-            this.toDoList.push({
-                text: this.toDo,
-                isDone: false,
-            });
+
+            if (this.toDo === true) {
+
+                this.toDoList.push({
+                    text: this.toDo,
+                    isDone: false,
+                });
+
+                this.toDo = "";
+            }else{
+                alert("non puoi lasciare il campo vuoto");
+            }
         },
         removeToDo(i) {
             this.toDoList.splice(i, 1);
         },
+        toggleToDo(i) {
+            this.toDoList[i].isDone = !this.toDoList[i].isDone;
+        }
 
     }
 });
